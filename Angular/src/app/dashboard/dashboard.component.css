@@ -1,0 +1,111 @@
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px groove;
+    background-color: rgba(240, 255, 255, 0.89);
+ }
+ .heading{
+    text-align: center;
+ }
+ .card-details{
+    margin-left: 500px;
+      width: 300px;
+      height: 230px;
+      border: 2px solid;
+      padding: 2px 2px 0px 2px;
+  
+ }
+ .card-details label{
+    color: rgb(241, 0, 0);
+    display: block;
+    width: 142px;
+  text-align: initial;
+    clear: both;
+    float: left;
+    padding: 5px;
+ }
+ .card-details input{
+    font-weight: 600;
+    color: rgb(4, 59, 161);
+  
+ }
+ .card-status{
+    text-align: center;
+    width: 308px;
+    height: 37px;
+    background-color: rgb(51, 114, 51);
+
+    margin-left: 500px;
+    border: 2px;
+    font-weight: 600;
+ }
+ .card-info{
+    margin-left: 40px;
+ }
+ .prod-head{
+    text-align: center;
+ }
+ .prod-det{
+    margin-left: 40px;
+   
+ }
+  
+ input{
+  width: 140px;
+  height: 25px;
+ }
+ .prod-det label{
+    color: rgb(241, 0, 0);
+    width: 142px;
+    text-align: initial;
+    clear: both;
+    float: left;
+    padding: 5px;
+ }
+ #transhead p{
+    margin-left: 40px;
+    text-align: center;
+ }
+ .trans-table{
+    text-align: center;
+    margin:0 auto;
+    width: 700px;
+   
+ }
+ .trans-table table{
+    text-align: center;
+    margin:0 auto;
+    width: 700px;
+ }
+  
+ .card-status-dis{
+   text-align: center;
+   width: 308px;
+   height: 37px;
+   background-color: rgb(241,0, 0);
+   
+   margin-left: 500px;
+   border: 2px;
+   font-weight: 600;
+}
+ 
+#navbar {
+   /* background-color: rgb(155, 155, 155); */
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+   margin-bottom: 20px;
+ }
+ #links {
+   list-style: none;
+   float: right;
+   margin: 20px 10px;
+ }
+  
+ .link {
+   float: left;
+   margin-right: 25px;
+   background-color: #3498db;
+   color: #fff;
+   padding: 5px 10px;
+   cursor: pointer;
+   border-radius: 5px;
+ }
+ 

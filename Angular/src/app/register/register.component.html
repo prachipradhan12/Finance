@@ -1,0 +1,213 @@
+<div id="navbar">
+  <ul id="links">
+    <li class="link"  [routerLink]="['/indexLink']">Home</li>
+    <li class="link"  [routerLink]="['/adminlogin']">Admin Login </li>
+    <li class="link" [routerLink]="['/registerLink']">User Register</li>
+    <li class="link" [routerLink]="['/loginLink']">User Login</li>
+  </ul>
+  <br style="clear: both" />
+</div>
+<section id="body">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+      <h2>Registration Form</h2>
+   
+      <div>
+        <label for="name">Name</label>
+        <input type="text" required id="name" name="name" [(ngModel)]="name" />
+      </div>
+   
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" [(ngModel)]="dob" required />
+      </div>
+   
+      <div>
+        <label for="emailId">Email ID</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z]{2,4}$"
+          #Nemail="ngModel"
+        />
+      </div>
+      <div [hidden]="Nemail.valid || Nemail.pristine" class="alert-danger">
+        <label></label>
+        <span>*Enter a valid Email Adress</span>
+      </div>
+   
+      <div>
+        <label for="phoneNo">Phone No.</label>
+        <input
+          type="number"
+          id="phoneNo"
+          name="phone"
+          [(ngModel)]="phone"
+          required
+          pattern="[789][0-9]{9}"
+          #NphoneNo="ngModel"
+        />
+      </div>
+      <div [hidden]="NphoneNo.valid || NphoneNo.pristine" class="alert-danger">
+        <label></label>
+        <span>*Phone No. must contain 10 digit</span>
+      </div>
+   
+      <div>
+        <label for="userName">User Name</label>
+        <input
+          type="text"
+          id="userName"
+          name="uname"
+          #Nuname="ngModel"
+          [(ngModel)]="uname"
+          required
+          minlength="5"
+          pattern="^[A-Za-z0-9]*$"
+        />
+        <div [hidden]="Nuname.valid || Nuname.pristine" class="alert-danger">
+          <label></label>
+          <span>*UserName must contain 5 char </span>
+          <br />
+          <label></label>
+          <span>(Can only contain aplphabets & numbers )</span>
+        </div>
+      </div>
+   
+      <div>
+        <label for="name">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="upass"
+          [(ngModel)]="upass"
+          #Nupass="ngModel"
+          required
+          minlength="8"
+          pattern="(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}"
+        />
+        <div [hidden]="Nupass.valid || Nupass.pristine" class="alert-danger">
+          <label></label>
+          <span>*Password must contain 8 char </span>
+          <br />
+          <label></label>
+          <span>(Minimum 1 upper lower number symbol each )</span>
+        </div>
+      </div>
+   
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="ucpass"
+          [(ngModel)]="ucpass"
+          #Nnucpass="ngModel"
+          required
+          minlength="8"
+          pattern="(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}"
+        />
+        <div [hidden]="Nnucpass.valid || Nnucpass.pristine" class="alert-danger">
+          <label></label>
+          <span>*Password must contain 8 char </span>
+          <br />
+          <label></label>
+          <span>(Minimum 1 upper lower number symbol each )</span>
+        </div>
+        <!-- <div class="alert-danger">
+          <label></label>
+          <span>*Password does not match</span>
+        </div> -->
+      </div>
+   
+      <div>
+        <label for="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          [(ngModel)]="address"
+          required
+        />
+      </div>
+   
+      <div>
+        <label>Card Type</label>
+        <input
+          type="radio"
+          id="gold"
+          name="cardtype"
+          value="gold"
+          [(ngModel)]="cardtype"
+          required
+        />
+        <label for="gold" style="width: 80px">--Gold</label>
+        <input
+          type="radio"
+          id="titanium"
+          name="cardtype"
+          value="titanium"
+          [(ngModel)]="cardtype"
+          required
+        />
+        <label for="titanium" style="width: 100px">--Titanium</label>
+      </div>
+   
+      <div>
+        <label for="bankName">Bank Name</label>
+        <input
+          type="text"
+          id="bankName"
+          name="bankname"
+          [(ngModel)]="bankname"
+          required
+        />
+      </div>
+   
+      <div>
+        <label for="accountNo">Account No.</label>
+        <input
+          type="number"
+          id="accountNo"
+          name="acc_no"
+          [(ngModel)]="acc_no"
+          required
+        />
+      </div>
+   
+      <div>
+        <label for="ifscCode">IFSC Code</label>
+        <input
+          type="text"
+          id="ifscCode"
+          name="ifsc_code"
+          [(ngModel)]="ifsc_code"
+          required
+        />
+      </div>
+      <div class="alert-danger" [hidden]="unameexists" style="text-align: center">
+        User with {{ uname }} already exists
+      </div>
+      <div
+        class="alert-danger"
+        [hidden]="passwordmatch"
+        style="text-align: center"
+      >
+        Password does not matches
+      </div>
+   
+      <div>
+        <button type="button" (click)="registerForm.reset()">Reset</button>
+        <button type="submit" [hidden]="!registerForm.form.valid">
+          Register
+        </button>
+      </div>
+   
+      <p>
+        Already a member? <a href="#" [routerLink]="['/loginLink']">Login Here</a>
+      </p>
+    </form>
+  </section>
+  

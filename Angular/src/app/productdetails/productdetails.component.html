@@ -1,0 +1,59 @@
+<div>
+  <div id="navbar">
+    <ul id="links">
+    
+  
+    
+      <li class="link" style="border: none;background-color: rgb(224, 112, 112);font-size: 17px; font-weight: bold;font-family: 'Times New Roman', Times, serif;" >Welcome! {{usname}}</li>
+      <li class="link"  [routerLink]="['/products']">Show Products</li>
+      <li class="link"  [routerLink]="['/userdashboard']">Show History</li>
+      <li class="link"  [routerLink]="['/indexLink']">Logout</li>
+      
+    </ul>
+    <br style="clear: both" />
+  </div>
+
+<div class="container">
+  <form>
+<section class="section">
+    <img src="../../assets/images/{{prod.prodimage}}"  class="image" />
+    <div class="content">
+  
+      
+      <label class="lb1"> PRODUCT NAME :</label><input class="ip" type="text"  name="prod.prodname" value="{{prod.prodname}}"  required>
+      <label class="lb1"> PRODUCT DETAILS :</label>
+      <div class="description">{{prod.proddesc}}</div>
+      
+      <!-- <input class="ta"  type="text" name="prod.proddesc" value="{{prod.proddesc}}" required ><br><br><br> -->
+      <label class="lb1"> COST :</label><input  type="text" class="ip" name="prod.price" value="{{prod.price}}" required><br><br><br>
+      <label class="lb1"> Processing Fees :</label><input  type="text" class="ip" name="prod.price" value="{{processingfees}}" required>
+        <br>
+        <br>
+        <br>
+      <p style="color: red;">EMI PERIOD</p>
+      <br>
+
+            <select class="dropdown" name="selectemi" #selectedemi="ngModel" [(ngModel)]="chosenMod" (change)="emiselected($event)" (ngModelChange)="modo()">
+          <option selected >Select EMI:</option>
+          <option  value="prod.emi_3m" value="mod1">3 months</option>
+          <option  value="prod.emi_6m" value="mod2">6 months</option>
+          <option  value="prod.emi_9m" value="mod3">9 months</option>
+          <option  value="prod.emi_1y" value="mod4">1 year</option>
+          
+        </select>
+        <br>
+        EMI Starting {{emivalue}} PM
+        <br>
+        <br>
+        <button class="button" (click)=saveData()>Buy Now</button>
+        <br>
+        <br>
+        
+        <br>
+        <a href>Terms and Conditions</a>
+    
+
+    </div>
+  
+  </section>
+  </form>

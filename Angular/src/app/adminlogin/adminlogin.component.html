@@ -1,0 +1,34 @@
+<div>
+  <div id="navbar">
+    <ul id="links">
+      <li class="link"  [routerLink]="['/indexLink']">Home</li>
+      <li class="link"  [routerLink]="['/adminlogin']">Admin Login </li>
+      <li class="link" [routerLink]="['/registerLink']">User Register</li>
+      <li class="link" [routerLink]="['/loginLink']">User Login</li>
+    </ul>
+    <br style="clear: both" />
+  </div>
+
+<section id="body">
+  <form>
+<h2 >AdminLogin</h2>
+<div class="container" >
+  <div>
+<label for="username"><b>Admin Name</b></label> 
+            <input  type="text" name="username" [(ngModel)]="name" placeholder="Enter AdminName" required ><br>       
+          </div> 
+        <div>
+            <label for="userpass"><b>Password</b></label>   
+            <input  type="password" name="userpass" [(ngModel)]="password" placeholder="Enter Password" required> <br>     
+          </div>
+       
+              <div style="display: flex">
+            <button type="submit" value="Login" (click)="checkAdmin()"> LOGIN</button>
+</div>
+</div>
+            <div class="alert-danger">
+              <span><b>{{message}}</b> </span>
+            </div>
+          </form>
+          </section>
+

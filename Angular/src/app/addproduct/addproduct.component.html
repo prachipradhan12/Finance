@@ -1,0 +1,81 @@
+<div id="navbar">
+    <ul id="links">
+     
+      <li class="link"  [routerLink]="['/indexLink']">Home </li>
+      <li class="link"  [routerLink]="['/admindashboard']">Show Users</li>
+      <li class="link"  [routerLink]="['/showallcards']">Show Cards</li>
+     
+    </ul>
+    <br style="clear: both" />
+  </div>
+  <section id="body">
+  <div class="header">
+    <h2>Admin's Product Adding Point</h2>
+ </div>
+  
+ <div class="container">
+    <div class="card">
+       <section id="body">
+          <form #myForm="ngForm" (ngSubmit)="saveData()">
+             <!-- <div>
+                <label for="prodid">Product ID</label>
+                <input  type="text" name="prodid" [(ngModel)]="finProd.prodid" required>
+             </div> -->
+             <div>
+                <label for="prodname">Product Name</label> 
+                <input  type="text" name="prodname" [(ngModel)]="finProd.prodname" required>
+             </div>
+             <!-- <div>
+                <label for="image">Product Image</label>  
+                <input  type="text" name="image" [(ngModel)]="finProd.prodimage" required> 
+             </div> -->
+             <div>
+                <label for="description">Product Description</label> 
+                <input  type="text" name="description" [(ngModel)]="finProd.proddesc" required>
+             </div>
+             <div>
+                <label for="price">Product Price</label>
+                <input  type="text" name="price" [(ngModel)]="finProd.price" required> 
+             </div>
+             <div style="display: flex">
+               <button type="submit"  (click)="calculateEmi(finProd.price)">Calculate EMI's</button>
+            </div>
+             <div>
+                <label for="emi3">EMI 3M</label> 
+                <input  type="text" name="emi3" [(ngModel)]="finProd.emi_3m" required>
+             </div>
+             <div>
+                <label for="emi6">EMI 6M</label> 
+                               <input  type="text" name="emi6" [(ngModel)]="finProd.emi_6m" required>
+             </div>
+             <div>
+                <label for="emi9">EMI 9M</label>
+                               <input  type="text" name="emi9" [(ngModel)]="finProd.emi_9m" required>   
+             </div>
+             <div>
+                <label for="emi1y">EMI 1Y</label>
+                           <input  type="text" name="emi1y" [(ngModel)]="finProd.emi_1y" required>
+             </div>
+             <div>
+                <label for="image">Product Image</label>
+                           <input  type="file" name="image"
+                           style="display: inline-block; " accept="image/x-png,image/jpeg,image/jpg" [(ngModel)]="finProd.prodimage" required>
+             </div>
+             <div style="display: flex">
+                <button type="submit" value="Save Product" [disabled]="!myForm.valid">Save Product</button>
+             </div>
+          </form>
+       </section>
+        
+    </div>
+ </div>
+   
+   
+   
+ 
+  
+  
+   
+  
+ 
+ 

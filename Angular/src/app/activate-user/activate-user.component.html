@@ -1,0 +1,41 @@
+<div id="navbar">
+    <ul id="links">
+      
+
+      <li class="link"  [routerLink]="['/indexLink']">Home </li>
+      <li class="link"  [routerLink]="['/addproducts']">Add Products</li>
+      <li class="link"  [routerLink]="['/admindashboard']">Show Users</li>
+      
+
+     
+    </ul>
+    <br style="clear: both" />
+  </div>
+
+
+<h2 style="text-align:center;">All User Card Details</h2>
+
+<table>
+    <tr>
+        <th colspan="6" style="text-align:center;">CARD DETAILS DATABASE</th>
+    </tr>
+  <tr>
+    <th>Registration ID</th>
+    <th>Card_No.</th>
+    <th>Card Type</th>
+    <th>Validity</th>
+    <th>Initial_bal</th>
+    <th>Available_bal</th>
+    
+    
+  </tr>
+  <tr *ngFor="let c of cards" >
+    <td>{{c.regid}}</td>
+    <td>{{c.cardno}}</td>
+    <td>{{c.cardtype}}</td>
+    <td>{{c.validity | date:'shortDate'}}</td> 
+    <td>{{c.initialbal}}</td>
+    <td>{{c.availbal}}</td>
+    
+</tr>
+</table>

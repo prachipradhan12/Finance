@@ -1,0 +1,73 @@
+<section id="body">
+    <div>
+      <div id="navbar">
+        <ul id="links">
+          <li class="link"  [routerLink]="['/adminlogin']">Admin Login </li>
+          <li class="link" [routerLink]="['/registerLink']">User Register</li>
+          <li class="link" [routerLink]="['/loginLink']">User Login</li>
+        </ul>
+        <br style="clear: both" />
+      </div>
+   
+      <div id="product">
+        <div id="productImage">
+          <img src="../../assets/images/{{prod.prodimage}}"  class="image" />
+        </div>
+        <div id="productInfo" >
+          <p>PRODUCT NAME:</p>{{prod.prodname}}
+          <p>PRODUCT DETAIL:</p>{{prod.proddesc}}
+          <p>COST:</p>{{prod.price}}
+          <br><button [routerLink]="['/registerLink']" >BUY NOW</button>
+        </div>
+      </div>
+      <div id="cardDetails">
+        <h4>Available Cards</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Card Type</th>
+              <th>Card Validity(in months)</th>
+              <th>Card Limit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let card of cards">
+              <td>{{ card.cardtype | uppercase }}</td>
+              <td>{{ card.validity }}</td>
+              <td>{{ card.cardlimit }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="eligibility">
+        <h4>Elgibility Criteria</h4>
+        <ol id="uleligibility">
+          <li>You are 18 years of age or over.</li>
+          <li>Indian citizens only can apply.</li>
+          <li>
+            Customers with a prior relationship should be earning Rs. 25,000 per
+            month.
+          </li>
+          <li>
+            New applicants should be earning Rs. 50,000 per month to avail this
+            service
+          </li>
+          <li>The information supplied by you is true and correct.</li>
+        </ol>
+      </div>
+      <div id="termsandconditions">
+        <h4>Terms & Conditions</h4>
+        <ol>
+          <li>
+            Joining fee is a fee that a issuer may require you to pay annually to
+            use its credit card.
+          </li>
+          <li>A late fee is a charge for any payment made after the due date.</li>
+          <li>Joining Fees for Gold Membership will be Rs 500,which will be automatically debited from your card limit</li>
+          <li>Joining Fees for Titanium Membership will be Rs 1000,which will be automatically debited from your card limit</li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+  
